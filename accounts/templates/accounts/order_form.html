@@ -1,0 +1,15 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block content %}
+
+<form action="" method="POST" >
+    {% csrf_token %}
+    {% for form in  formset %}
+        {{form}}
+        <br>
+    <br>
+    {% endfor %}
+<input class="btn btn-info" type="submit"  name="Submit">
+</form>
+
+{% endblock content %}
