@@ -22,7 +22,11 @@ urlpatterns = [
     path("delete_order/<str:pk>", views.delete_order, name="delete_order"),
     # Password reset
     path(
-        "reset_password/", auth_views.PasswordResetView.as_view(), name="reset_password"
+        "reset_password/",
+        auth_views.PasswordResetView.as_view(
+            template_name="accounts/password_reset_form.html"
+        ),
+        name="reset_password",
     ),
     path(
         "reset_password_sent/",
